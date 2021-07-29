@@ -1,0 +1,2006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.8.10 on win32)" generated="20210727 09:03:41.056" rpa="false" schemaversion="2">
+<suite id="s1" name="Main" source="C:\Users\joan.arevalo\Documents\Testing\TRAINING\Pruebas\proyectos\testcase\main.robot">
+<test id="s1-t1" name="Prueba 1">
+<kw name="Check Input Data Row Count" library="excel.module">
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${DATAFILE}</arg>
+<arg>doc1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20210727 09:03:41.504" endtime="20210727 09:03:41.514"/>
+</kw>
+<kw name="Count Row" library="ExcelLibrary">
+<var>${UsedRow}</var>
+<arg>form3</arg>
+<doc>Getting row count.</doc>
+<msg timestamp="20210727 09:03:41.515" level="INFO">${UsedRow} = 3</msg>
+<status status="PASS" starttime="20210727 09:03:41.515" endtime="20210727 09:03:41.515"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${UsedRow}</arg>
+<arg>Cuenta las Filas</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210727 09:03:41.515" endtime="20210727 09:03:41.516"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${MaxRange}</var>
+<arg>${UsedRow}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210727 09:03:41.516" level="INFO">${MaxRange} = 3</msg>
+<status status="PASS" starttime="20210727 09:03:41.516" endtime="20210727 09:03:41.516"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MaxRange}</arg>
+<arg>Asigna la variable UsedRow</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210727 09:03:41.517" endtime="20210727 09:03:41.518"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${MaxRange}</var>
+<arg>${MaxRange}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210727 09:03:41.519" level="INFO">${MaxRange} = 4</msg>
+<status status="PASS" starttime="20210727 09:03:41.518" endtime="20210727 09:03:41.519"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MaxRange}</arg>
+<arg>le da un mas 1 a la variable MaxRange</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210727 09:03:41.519" endtime="20210727 09:03:41.521"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${MaxRange}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:41.521" level="INFO">${MaxRange} = 4</msg>
+<status status="PASS" starttime="20210727 09:03:41.521" endtime="20210727 09:03:41.521"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Input Data Row Count: ${UsedRow}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210727 09:03:41.521" endtime="20210727 09:03:41.522"/>
+</kw>
+<kw name="Save Excel Document" library="ExcelLibrary">
+<arg>${DATAFILE}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" starttime="20210727 09:03:41.522" endtime="20210727 09:03:41.547"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20210727 09:03:41.547" endtime="20210727 09:03:41.548"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:41.504" endtime="20210727 09:03:41.548"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>2</value>
+<value>${MaxRange}</value>
+<iter>
+<var name="${index}">2</var>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${index}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:41.550" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20210727 09:03:41.550" endtime="20210727 09:03:41.550"/>
+</kw>
+<kw name="Abrir navegador" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${_url}</arg>
+<arg>${_navegador}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210727 09:03:41.553" level="INFO">Opening browser 'chrome' to base url 'https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html'.</msg>
+<status status="PASS" starttime="20210727 09:03:41.552" endtime="20210727 09:03:45.975"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210727 09:03:45.976" endtime="20210727 09:03:46.100"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:41.550" endtime="20210727 09:03:46.101"/>
+</kw>
+<kw name="Read Input Data" library="excel.module">
+<doc>_*SUMMARY:*_
+Open, read and write files in excel format</doc>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${DATAFILE}</arg>
+<arg>doc1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20210727 09:03:46.102" endtime="20210727 09:03:46.128"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_nombre}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.129" level="INFO">${_nombre} = Jorge</msg>
+<status status="PASS" starttime="20210727 09:03:46.128" endtime="20210727 09:03:46.129"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_nombre}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.131" level="INFO">${_nombre} = Jorge</msg>
+<status status="PASS" starttime="20210727 09:03:46.130" endtime="20210727 09:03:46.131"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_apellido}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.133" level="INFO">${_apellido} = Huertas</msg>
+<status status="PASS" starttime="20210727 09:03:46.131" endtime="20210727 09:03:46.133"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_apellido}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.135" level="INFO">${_apellido} = Huertas</msg>
+<status status="PASS" starttime="20210727 09:03:46.134" endtime="20210727 09:03:46.135"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_email}</var>
+<arg>${index}</arg>
+<arg>3</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.138" level="INFO">${_email} = jorge.huertas@neoris.com</msg>
+<status status="PASS" starttime="20210727 09:03:46.135" endtime="20210727 09:03:46.138"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.140" level="INFO">${_email} = jorge.huertas@neoris.com</msg>
+<status status="PASS" starttime="20210727 09:03:46.139" endtime="20210727 09:03:46.140"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_telefono}</var>
+<arg>${index}</arg>
+<arg>4</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.141" level="INFO">${_telefono} = 3192564377</msg>
+<status status="PASS" starttime="20210727 09:03:46.140" endtime="20210727 09:03:46.141"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_telefono}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.141" level="INFO">${_telefono} = 3192564377</msg>
+<status status="PASS" starttime="20210727 09:03:46.141" endtime="20210727 09:03:46.141"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_direccion}</var>
+<arg>${index}</arg>
+<arg>5</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.142" level="INFO">${_direccion} = Calle 130 d 124 - 24</msg>
+<status status="PASS" starttime="20210727 09:03:46.142" endtime="20210727 09:03:46.142"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_direccion}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.143" level="INFO">${_direccion} = Calle 130 d 124 - 24</msg>
+<status status="PASS" starttime="20210727 09:03:46.142" endtime="20210727 09:03:46.143"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_ciudad}</var>
+<arg>${index}</arg>
+<arg>6</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.144" level="INFO">${_ciudad} = Bogota</msg>
+<status status="PASS" starttime="20210727 09:03:46.143" endtime="20210727 09:03:46.144"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_ciudad}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.145" level="INFO">${_ciudad} = Bogota</msg>
+<status status="PASS" starttime="20210727 09:03:46.144" endtime="20210727 09:03:46.145"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_codigo_postal}</var>
+<arg>${index}</arg>
+<arg>7</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.145" level="INFO">${_codigo_postal} = 11001</msg>
+<status status="PASS" starttime="20210727 09:03:46.145" endtime="20210727 09:03:46.145"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_codigo_postal}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.147" level="INFO">${_codigo_postal} = 11001</msg>
+<status status="PASS" starttime="20210727 09:03:46.145" endtime="20210727 09:03:46.147"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_dominio}</var>
+<arg>${index}</arg>
+<arg>8</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.148" level="INFO">${_dominio} = https://demoqa.com/automation-practice-form</msg>
+<status status="PASS" starttime="20210727 09:03:46.147" endtime="20210727 09:03:46.148"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_dominio}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.149" level="INFO">${_dominio} = https://demoqa.com/automation-practice-form</msg>
+<status status="PASS" starttime="20210727 09:03:46.148" endtime="20210727 09:03:46.149"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_descripcion}</var>
+<arg>${index}</arg>
+<arg>9</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.151" level="INFO">${_descripcion} = Capacitacion robot</msg>
+<status status="PASS" starttime="20210727 09:03:46.150" endtime="20210727 09:03:46.151"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_descripcion}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.153" level="INFO">${_descripcion} = Capacitacion robot</msg>
+<status status="PASS" starttime="20210727 09:03:46.152" endtime="20210727 09:03:46.153"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_mensaje}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>form</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.154" level="INFO">${_mensaje} = hola mundo</msg>
+<status status="PASS" starttime="20210727 09:03:46.153" endtime="20210727 09:03:46.154"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_mensaje}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.155" level="INFO">${_mensaje} = hola mundo</msg>
+<status status="PASS" starttime="20210727 09:03:46.154" endtime="20210727 09:03:46.155"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_entrada_a}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>form</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.155" level="INFO">${_entrada_a} = 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.155" endtime="20210727 09:03:46.155"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_entrada_a}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.156" level="INFO">${_entrada_a} = 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.155" endtime="20210727 09:03:46.156"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_entrada_b}</var>
+<arg>${index}</arg>
+<arg>3</arg>
+<arg>form</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.156" level="INFO">${_entrada_b} = 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.156" endtime="20210727 09:03:46.156"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_entrada_b}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.157" level="INFO">${_entrada_b} = 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.157" endtime="20210727 09:03:46.157"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_male}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.158" level="INFO">${_male} = Male</msg>
+<status status="PASS" starttime="20210727 09:03:46.158" endtime="20210727 09:03:46.158"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_male}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.159" level="INFO">${_male} = Male</msg>
+<status status="PASS" starttime="20210727 09:03:46.158" endtime="20210727 09:03:46.159"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_female}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.159" level="INFO">${_female} = Male</msg>
+<status status="PASS" starttime="20210727 09:03:46.159" endtime="20210727 09:03:46.159"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_female}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.160" level="INFO">${_female} = Male</msg>
+<status status="PASS" starttime="20210727 09:03:46.159" endtime="20210727 09:03:46.160"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_0a5}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.161" level="INFO">${_0a5} = 0 - 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.160" endtime="20210727 09:03:46.161"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_0a5}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.161" level="INFO">${_0a5} = 0 - 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.161" endtime="20210727 09:03:46.161"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_5a15}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.162" level="INFO">${_5a15} = 0 - 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.162" endtime="20210727 09:03:46.162"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_5a15}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.163" level="INFO">${_5a15} = 0 - 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.162" endtime="20210727 09:03:46.163"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_15a50}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.165" level="INFO">${_15a50} = 0 - 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.163" endtime="20210727 09:03:46.165"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_15a50}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.166" level="INFO">${_15a50} = 0 - 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.166" endtime="20210727 09:03:46.166"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_friday}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>seleccionar</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.169" level="INFO">${_friday} = Friday</msg>
+<status status="PASS" starttime="20210727 09:03:46.167" endtime="20210727 09:03:46.169"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_friday}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.170" level="INFO">${_friday} = Friday</msg>
+<status status="PASS" starttime="20210727 09:03:46.169" endtime="20210727 09:03:46.170"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_country}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.170" level="INFO">${_country} = India</msg>
+<status status="PASS" starttime="20210727 09:03:46.170" endtime="20210727 09:03:46.170"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_country}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.171" level="INFO">${_country} = India</msg>
+<status status="PASS" starttime="20210727 09:03:46.171" endtime="20210727 09:03:46.171"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_state}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.172" level="INFO">${_state} = 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.171" endtime="20210727 09:03:46.172"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_state}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.173" level="INFO">${_state} = 5</msg>
+<status status="PASS" starttime="20210727 09:03:46.172" endtime="20210727 09:03:46.173"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_territories}</var>
+<arg>${index}</arg>
+<arg>3</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.173" level="INFO">${_territories} = PR</msg>
+<status status="PASS" starttime="20210727 09:03:46.173" endtime="20210727 09:03:46.174"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_territories}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.174" level="INFO">${_territories} = PR</msg>
+<status status="PASS" starttime="20210727 09:03:46.174" endtime="20210727 09:03:46.174"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_state2}</var>
+<arg>${index}</arg>
+<arg>4</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.175" level="INFO">${_state2} = 6</msg>
+<status status="PASS" starttime="20210727 09:03:46.175" endtime="20210727 09:03:46.175"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_state2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.176" level="INFO">${_state2} = 6</msg>
+<status status="PASS" starttime="20210727 09:03:46.175" endtime="20210727 09:03:46.176"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_lenguaje}</var>
+<arg>${index}</arg>
+<arg>5</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:03:46.176" level="INFO">${_lenguaje} = PHP</msg>
+<status status="PASS" starttime="20210727 09:03:46.176" endtime="20210727 09:03:46.176"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_lenguaje}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:03:46.177" level="INFO">${_lenguaje} = PHP</msg>
+<status status="PASS" starttime="20210727 09:03:46.177" endtime="20210727 09:03:46.177"/>
+</kw>
+<kw name="Save Excel Document" library="ExcelLibrary">
+<arg>${DATAFILE}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" starttime="20210727 09:03:46.177" endtime="20210727 09:03:46.219"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20210727 09:03:46.219" endtime="20210727 09:03:46.219"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Input Data is:${_nombre},${_apellido},${_email},${_telefono},${_direccion},${_ciudad},${_codigo_postal},${_dominio},${_descripcion},${_mensaje},${_entrada_a},${_entrada_b},${_male},${_female},${_0a5},${_5a15},${_15a50},${_friday},${_country},${_state},${_territories},${_state2},${_lenguaje}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210727 09:03:46.220" endtime="20210727 09:03:46.222"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:46.101" endtime="20210727 09:03:46.222"/>
+</kw>
+<kw name="Ingresar munu formulario" library="menu">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo}</arg>
+<arg>300s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:03:46.222" endtime="20210727 09:03:46.233"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:46.234" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:46.234" endtime="20210727 09:03:46.288"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:03:47.293" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:03:46.289" endtime="20210727 09:03:47.293"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_simple_form_demo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:47.293" level="INFO">Clicking element '//*[@id="treemenu"]/li/ul/li[1]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210727 09:03:47.293" endtime="20210727 09:03:49.570"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:46.222" endtime="20210727 09:03:49.571"/>
+</kw>
+<kw name="Ejemplo formulario" library="formulario">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${_cerrar_ventana_emerjente}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210727 09:03:49.571" endtime="20210727 09:03:50.714"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_cerrar_ventana_emerjente}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:50.715" level="INFO">Clicking element '//a[@id="at-cv-lightbox-close"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:50.715" endtime="20210727 09:03:50.757"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_formulario1}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:03:50.758" endtime="20210727 09:03:50.772"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input_formulario1}</arg>
+<arg>${_mensaje}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:50.773" level="INFO">Typing text 'hola mundo' into text field '//input[@id="user-message"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:50.772" endtime="20210727 09:03:50.847"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_formulario1}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:50.849" level="INFO">Clicking button '//button[@type="button" and text()="Show Message"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:50.848" endtime="20210727 09:03:50.892"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${_titulo_formulario2}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210727 09:03:50.893" endtime="20210727 09:03:51.178"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input1_formulario2}</arg>
+<arg>${_entrada_a}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:51.179" level="INFO">Typing text '5' into text field '//input[@id="sum1"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:51.178" endtime="20210727 09:03:51.242"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input2_formulario2}</arg>
+<arg>${_entrada_b}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:51.243" level="INFO">Typing text '5' into text field '//input[@id="sum2"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:51.242" endtime="20210727 09:03:51.308"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_formulario2}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:51.309" level="INFO">Clicking button '//button[text()="Get Total"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:51.309" endtime="20210727 09:03:51.400"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,-document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210727 09:03:51.400" level="INFO">Executing JavaScript:
+window.scrollBy(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210727 09:03:51.400" endtime="20210727 09:03:51.405"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:49.571" endtime="20210727 09:03:51.405"/>
+</kw>
+<kw name="Ingresar menu 3" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:51.405" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:51.405" endtime="20210727 09:03:51.450"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:03:52.463" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:03:51.451" endtime="20210727 09:03:52.463"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_form_submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:52.463" level="INFO">Clicking element '//*[@id="treemenu"]/li/ul/li[1]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20210727 09:03:52.463" endtime="20210727 09:03:53.215"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:51.405" endtime="20210727 09:03:53.216"/>
+</kw>
+<kw name="Ejemplo formulario3" library="formulario3">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_formulario3}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:03:53.216" endtime="20210727 09:03:53.227"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:03:54.233" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:03:53.228" endtime="20210727 09:03:54.233"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input1_nombre_formulario3}</arg>
+<arg>${_nombre}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:54.234" level="INFO">Typing text 'Jorge' into text field '//input[@name="first_name"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:54.233" endtime="20210727 09:03:54.329"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input2_apellido_formulario3}</arg>
+<arg>${_apellido}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:54.330" level="INFO">Typing text 'Huertas' into text field '//input[@name="last_name"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:54.329" endtime="20210727 09:03:54.446"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input3_email_formulario3}</arg>
+<arg>${_email}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:54.446" level="INFO">Typing text 'jorge.huertas@neoris.com' into text field '//input[@name="email"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:54.446" endtime="20210727 09:03:54.636"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input4_telefono_formulario3}</arg>
+<arg>${_telefono}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:54.638" level="INFO">Typing text '3192564377' into text field '//input[@name="phone"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:54.637" endtime="20210727 09:03:54.808"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input5_direccion_formulario3}</arg>
+<arg>${_direccion}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:54.809" level="INFO">Typing text 'Calle 130 d 124 - 24' into text field '//input[@name="address"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:54.808" endtime="20210727 09:03:54.972"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input6_ciudad_formulario3}</arg>
+<arg>${_ciudad}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:54.973" level="INFO">Typing text 'Bogota' into text field '//input[@name="city"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:54.972" endtime="20210727 09:03:55.072"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${_select_formulario3}</arg>
+<arg>Colorado</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210727 09:03:55.073" level="INFO">Selecting options from selection list '//Select[@name="state"]' by label Colorado.</msg>
+<status status="PASS" starttime="20210727 09:03:55.072" endtime="20210727 09:03:55.137"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input7_zip_formulario3}</arg>
+<arg>${_codigo_postal}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:55.137" level="INFO">Typing text '11001' into text field '//input[@name="zip"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:55.137" endtime="20210727 09:03:55.260"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input8_website_formulario3}</arg>
+<arg>${_dominio}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:55.261" level="INFO">Typing text 'https://demoqa.com/automation-practice-form' into text field '//input[@name="website"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:55.261" endtime="20210727 09:03:55.355"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_hosting}</arg>
+<arg>yes</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:03:55.355" level="INFO">Selecting 'yes' from radio button 'hosting'.</msg>
+<status status="PASS" starttime="20210727 09:03:55.355" endtime="20210727 09:03:55.405"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_textarea_comentarios_formulario3}</arg>
+<arg>${_descripcion}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:55.406" level="INFO">Typing text 'Capacitacion robot' into text field '//textarea[@name="comment"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:55.405" endtime="20210727 09:03:55.599"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_button_send_formulario3}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:55.600" level="INFO">Clicking button '//button[text()="Send "]'.</msg>
+<status status="PASS" starttime="20210727 09:03:55.599" endtime="20210727 09:03:55.662"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:03:56.670" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:03:55.662" endtime="20210727 09:03:56.670"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,-document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210727 09:03:56.670" level="INFO">Executing JavaScript:
+window.scrollBy(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210727 09:03:56.670" endtime="20210727 09:03:56.677"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:53.216" endtime="20210727 09:03:56.677"/>
+</kw>
+<kw name="Ingresar checkbox" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:56.678" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:03:56.678" endtime="20210727 09:03:56.710"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:03:57.713" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:03:56.710" endtime="20210727 09:03:57.713"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_checkbox_demo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:03:57.714" level="INFO">Clicking element '//body/div[2]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]'.</msg>
+<status status="PASS" starttime="20210727 09:03:57.713" endtime="20210727 09:04:01.719"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:56.677" endtime="20210727 09:04:01.719"/>
+</kw>
+<kw name="Checkbox demo" library="checkbox">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_checkbox}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:01.720" endtime="20210727 09:04:01.732"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:02.735" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:01.732" endtime="20210727 09:04:02.735"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${_single_checkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:02.736" level="INFO">Selecting checkbox '//input[@id='isAgeSelected']'.</msg>
+<status status="PASS" starttime="20210727 09:04:02.735" endtime="20210727 09:04:02.789"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${_multiple_checkbox_opcion1}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:02.790" level="INFO">Selecting checkbox '//label[text()="Option 1"]/input'.</msg>
+<status status="PASS" starttime="20210727 09:04:02.789" endtime="20210727 09:04:02.841"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${_multiple_checkbox_opcion2}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:02.842" level="INFO">Selecting checkbox '//label[text()="Option 2"]/input'.</msg>
+<status status="PASS" starttime="20210727 09:04:02.841" endtime="20210727 09:04:02.887"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_checkbox}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:02.888" level="INFO">Clicking button '//input[@id='check1']'.</msg>
+<status status="PASS" starttime="20210727 09:04:02.888" endtime="20210727 09:04:02.928"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:03.939" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:02.929" endtime="20210727 09:04:03.939"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_checkbox}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:03.939" level="INFO">Clicking button '//input[@id='check1']'.</msg>
+<status status="PASS" starttime="20210727 09:04:03.939" endtime="20210727 09:04:03.975"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:04.984" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:03.976" endtime="20210727 09:04:04.984"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:01.719" endtime="20210727 09:04:04.984"/>
+</kw>
+<kw name="Ingresar radio buttons" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:04.986" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:04.985" endtime="20210727 09:04:05.019"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:06.025" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:05.019" endtime="20210727 09:04:06.025"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_radio_buttons}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:06.026" level="INFO">Clicking element '//body/div[@id='easycont']/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]'.</msg>
+<status status="PASS" starttime="20210727 09:04:06.025" endtime="20210727 09:04:06.229"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:04.985" endtime="20210727 09:04:06.229"/>
+</kw>
+<kw name="Radio button demo" library="radio_buttons">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_radio_buttons}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:06.230" endtime="20210727 09:04:06.244"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:07.249" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:06.245" endtime="20210727 09:04:07.249"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_optradio}</arg>
+<arg>${_female}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:07.250" level="INFO">Selecting 'Male' from radio button 'optradio'.</msg>
+<status status="PASS" starttime="20210727 09:04:07.249" endtime="20210727 09:04:07.296"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_radio_optradio}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:07.297" level="INFO">Clicking button '//button[@id='buttoncheck']'.</msg>
+<status status="PASS" starttime="20210727 09:04:07.296" endtime="20210727 09:04:07.340"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:09.344" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210727 09:04:07.341" endtime="20210727 09:04:09.344"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_optradio}</arg>
+<arg>${_male}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:09.345" level="INFO">Selecting 'Male' from radio button 'optradio'.</msg>
+<status status="PASS" starttime="20210727 09:04:09.344" endtime="20210727 09:04:09.361"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_radio_optradio}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:09.361" level="INFO">Clicking button '//button[@id='buttoncheck']'.</msg>
+<status status="PASS" starttime="20210727 09:04:09.361" endtime="20210727 09:04:09.394"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210727 09:04:09.395" level="INFO">Executing JavaScript:
+window.scrollBy(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210727 09:04:09.394" endtime="20210727 09:04:09.399"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:11.403" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210727 09:04:09.399" endtime="20210727 09:04:11.403"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_gender}</arg>
+<arg>${_male}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:11.403" level="INFO">Selecting 'Male' from radio button 'gender'.</msg>
+<status status="PASS" starttime="20210727 09:04:11.403" endtime="20210727 09:04:11.454"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_ageGroup}</arg>
+<arg>${_0a5}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:11.455" level="INFO">Selecting '0 - 5' from radio button 'ageGroup'.</msg>
+<status status="PASS" starttime="20210727 09:04:11.454" endtime="20210727 09:04:11.497"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_groupr_radio}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:11.498" level="INFO">Clicking button '//button[contains(text(),'Get values')]'.</msg>
+<status status="PASS" starttime="20210727 09:04:11.497" endtime="20210727 09:04:11.542"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:12.547" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:11.542" endtime="20210727 09:04:12.547"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:06.229" endtime="20210727 09:04:12.547"/>
+</kw>
+<kw name="Ingresar select list" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:12.547" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:12.547" endtime="20210727 09:04:12.586"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:13.600" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:12.587" endtime="20210727 09:04:13.600"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_select_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:13.601" level="INFO">Clicking element '//body/div[@id='easycont']/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[4]/a[1]'.</msg>
+<status status="PASS" starttime="20210727 09:04:13.600" endtime="20210727 09:04:13.812"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:12.547" endtime="20210727 09:04:13.812"/>
+</kw>
+<kw name="Select list" library="select_list">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_select_list}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:13.813" endtime="20210727 09:04:13.825"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:14.841" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:13.826" endtime="20210727 09:04:14.841"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${_select_list}</arg>
+<arg>${_friday}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210727 09:04:14.842" level="INFO">Selecting options from selection list '//select[@id="select-demo"]' by label Friday.</msg>
+<status status="PASS" starttime="20210727 09:04:14.842" endtime="20210727 09:04:14.893"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:15.896" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:14.893" endtime="20210727 09:04:15.896"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_option_Florida}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:15.897" level="INFO">Clicking element '//option[@value='Florida']'.</msg>
+<status status="PASS" starttime="20210727 09:04:15.896" endtime="20210727 09:04:15.931"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_firt}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:15.932" level="INFO">Clicking button '//button[@id='printMe']'.</msg>
+<status status="PASS" starttime="20210727 09:04:15.931" endtime="20210727 09:04:15.977"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:16.980" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:15.977" endtime="20210727 09:04:16.980"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_option_Texas}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:16.981" level="INFO">Clicking element '//option[@value='Texas']'.</msg>
+<status status="PASS" starttime="20210727 09:04:16.980" endtime="20210727 09:04:17.014"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_all}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:17.014" level="INFO">Clicking button '//button[@id='printAll']'.</msg>
+<status status="PASS" starttime="20210727 09:04:17.014" endtime="20210727 09:04:17.052"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:18.054" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:17.053" endtime="20210727 09:04:18.054"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,-document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210727 09:04:18.055" level="INFO">Executing JavaScript:
+window.scrollBy(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210727 09:04:18.054" endtime="20210727 09:04:18.062"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:13.813" endtime="20210727 09:04:18.062"/>
+</kw>
+<kw name="Ingresar ajax" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:18.063" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:18.063" endtime="20210727 09:04:18.093"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:19.095" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:18.093" endtime="20210727 09:04:19.095"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_ajax}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:19.096" level="INFO">Clicking element '//body/div[2]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[6]/a[1]'.</msg>
+<status status="PASS" starttime="20210727 09:04:19.095" endtime="20210727 09:04:19.371"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:18.063" endtime="20210727 09:04:19.372"/>
+</kw>
+<kw name="Ajax" library="ajax">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_ajax}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:19.374" endtime="20210727 09:04:19.391"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:20.399" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:19.391" endtime="20210727 09:04:20.399"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input_ajax_nombre}</arg>
+<arg>${_nombre}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:20.399" level="INFO">Typing text 'Jorge' into text field '//input[@id='title']'.</msg>
+<status status="PASS" starttime="20210727 09:04:20.399" endtime="20210727 09:04:20.464"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_textarea_ajax}</arg>
+<arg>${_mensaje}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:20.464" level="INFO">Typing text 'hola mundo' into text field '//textarea[@id='description']'.</msg>
+<status status="PASS" starttime="20210727 09:04:20.464" endtime="20210727 09:04:20.529"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_ajax}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:20.530" level="INFO">Clicking button '//input[@id='btn-submit']'.</msg>
+<status status="PASS" starttime="20210727 09:04:20.529" endtime="20210727 09:04:21.655"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:22.670" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:21.655" endtime="20210727 09:04:22.670"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:19.373" endtime="20210727 09:04:22.670"/>
+</kw>
+<kw name="Ingresar jquery" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:22.670" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:22.670" endtime="20210727 09:04:22.703"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:23.710" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:22.703" endtime="20210727 09:04:23.710"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_jquery}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:23.711" level="INFO">Clicking element '//body/div[2]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[7]/a[1]'.</msg>
+<status status="PASS" starttime="20210727 09:04:23.710" endtime="20210727 09:04:24.305"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:22.670" endtime="20210727 09:04:24.305"/>
+</kw>
+<kw name="JQuery" library="jquery">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_jquery}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:24.306" endtime="20210727 09:04:24.314"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:25.316" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:24.314" endtime="20210727 09:04:25.316"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${_select_country_jquery}</arg>
+<arg>${_country}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210727 09:04:25.317" level="INFO">Selecting options from selection list '//select[@id="country"]' by label India.</msg>
+<status status="PASS" starttime="20210727 09:04:25.316" endtime="20210727 09:04:25.365"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${_select_states_jquery}</arg>
+<arg>${_state}</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20210727 09:04:25.366" level="INFO">Selecting options from selection list '//select[@class="js-example-basic-multiple select2-hidden-accessible"]' by index 5.</msg>
+<status status="PASS" starttime="20210727 09:04:25.365" endtime="20210727 09:04:25.437"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${_select_territories_jquery}</arg>
+<arg>${_territories}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210727 09:04:25.438" level="INFO">Selecting options from selection list '//select[@class="js-example-disabled-results select2-hidden-accessible"]' by value PR.</msg>
+<status status="PASS" starttime="20210727 09:04:25.437" endtime="20210727 09:04:25.490"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:27.503" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210727 09:04:25.490" endtime="20210727 09:04:27.503"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_eliminar_select_states}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:27.504" level="INFO">Clicking element '//span[contains(text(),'×')]'.</msg>
+<status status="PASS" starttime="20210727 09:04:27.503" endtime="20210727 09:04:27.554"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${_select_states_jquery}</arg>
+<arg>${_state2}</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20210727 09:04:27.555" level="INFO">Selecting options from selection list '//select[@class="js-example-basic-multiple select2-hidden-accessible"]' by index 6.</msg>
+<status status="PASS" starttime="20210727 09:04:27.555" endtime="20210727 09:04:27.627"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_titulo2_jquery}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:27.628" level="INFO">Clicking element '//h3[contains(text(),'Drop-down with Category related options')]'.</msg>
+<status status="PASS" starttime="20210727 09:04:27.627" endtime="20210727 09:04:27.670"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${_select_file_jquery}</arg>
+<arg>PHP</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210727 09:04:27.671" level="INFO">Selecting options from selection list '//select[@id='files']' by label PHP.</msg>
+<status status="PASS" starttime="20210727 09:04:27.670" endtime="20210727 09:04:27.722"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:29.727" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210727 09:04:27.722" endtime="20210727 09:04:29.727"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:24.306" endtime="20210727 09:04:29.727"/>
+</kw>
+<status status="PASS" starttime="20210727 09:03:41.549" endtime="20210727 09:04:29.727"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${index}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:29.728" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20210727 09:04:29.727" endtime="20210727 09:04:29.728"/>
+</kw>
+<kw name="Abrir navegador" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${_url}</arg>
+<arg>${_navegador}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210727 09:04:29.730" level="INFO">Opening browser 'chrome' to base url 'https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html'.</msg>
+<status status="PASS" starttime="20210727 09:04:29.729" endtime="20210727 09:04:34.223"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210727 09:04:34.223" endtime="20210727 09:04:34.356"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:29.728" endtime="20210727 09:04:34.357"/>
+</kw>
+<kw name="Read Input Data" library="excel.module">
+<doc>_*SUMMARY:*_
+Open, read and write files in excel format</doc>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${DATAFILE}</arg>
+<arg>doc1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20210727 09:04:34.358" endtime="20210727 09:04:34.377"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_nombre}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.378" level="INFO">${_nombre} = Joan</msg>
+<status status="PASS" starttime="20210727 09:04:34.377" endtime="20210727 09:04:34.378"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_nombre}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.379" level="INFO">${_nombre} = Joan</msg>
+<status status="PASS" starttime="20210727 09:04:34.378" endtime="20210727 09:04:34.379"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_apellido}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.380" level="INFO">${_apellido} = Arevalo</msg>
+<status status="PASS" starttime="20210727 09:04:34.379" endtime="20210727 09:04:34.380"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_apellido}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.381" level="INFO">${_apellido} = Arevalo</msg>
+<status status="PASS" starttime="20210727 09:04:34.380" endtime="20210727 09:04:34.381"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_email}</var>
+<arg>${index}</arg>
+<arg>3</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.381" level="INFO">${_email} = joan.arevalo@neoris.com</msg>
+<status status="PASS" starttime="20210727 09:04:34.381" endtime="20210727 09:04:34.381"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.383" level="INFO">${_email} = joan.arevalo@neoris.com</msg>
+<status status="PASS" starttime="20210727 09:04:34.382" endtime="20210727 09:04:34.383"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_telefono}</var>
+<arg>${index}</arg>
+<arg>4</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.385" level="INFO">${_telefono} = 3506855216</msg>
+<status status="PASS" starttime="20210727 09:04:34.383" endtime="20210727 09:04:34.385"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_telefono}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.386" level="INFO">${_telefono} = 3506855216</msg>
+<status status="PASS" starttime="20210727 09:04:34.386" endtime="20210727 09:04:34.386"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_direccion}</var>
+<arg>${index}</arg>
+<arg>5</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.388" level="INFO">${_direccion} = Carrea 3 # 7 33</msg>
+<status status="PASS" starttime="20210727 09:04:34.387" endtime="20210727 09:04:34.388"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_direccion}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.389" level="INFO">${_direccion} = Carrea 3 # 7 33</msg>
+<status status="PASS" starttime="20210727 09:04:34.388" endtime="20210727 09:04:34.389"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_ciudad}</var>
+<arg>${index}</arg>
+<arg>6</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.390" level="INFO">${_ciudad} = Bogota</msg>
+<status status="PASS" starttime="20210727 09:04:34.389" endtime="20210727 09:04:34.390"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_ciudad}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.390" level="INFO">${_ciudad} = Bogota</msg>
+<status status="PASS" starttime="20210727 09:04:34.390" endtime="20210727 09:04:34.390"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_codigo_postal}</var>
+<arg>${index}</arg>
+<arg>7</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.391" level="INFO">${_codigo_postal} = 11001</msg>
+<status status="PASS" starttime="20210727 09:04:34.391" endtime="20210727 09:04:34.391"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_codigo_postal}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.391" level="INFO">${_codigo_postal} = 11001</msg>
+<status status="PASS" starttime="20210727 09:04:34.391" endtime="20210727 09:04:34.392"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_dominio}</var>
+<arg>${index}</arg>
+<arg>8</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.392" level="INFO">${_dominio} = https://demoqa.com/</msg>
+<status status="PASS" starttime="20210727 09:04:34.392" endtime="20210727 09:04:34.392"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_dominio}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.393" level="INFO">${_dominio} = https://demoqa.com/</msg>
+<status status="PASS" starttime="20210727 09:04:34.392" endtime="20210727 09:04:34.393"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_descripcion}</var>
+<arg>${index}</arg>
+<arg>9</arg>
+<arg>form3</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.393" level="INFO">${_descripcion} = Capacitacion johan</msg>
+<status status="PASS" starttime="20210727 09:04:34.393" endtime="20210727 09:04:34.393"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_descripcion}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.394" level="INFO">${_descripcion} = Capacitacion johan</msg>
+<status status="PASS" starttime="20210727 09:04:34.394" endtime="20210727 09:04:34.394"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_mensaje}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>form</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.395" level="INFO">${_mensaje} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.394" endtime="20210727 09:04:34.395"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_mensaje}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.395" level="INFO">${_mensaje} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.395" endtime="20210727 09:04:34.395"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_entrada_a}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>form</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.396" level="INFO">${_entrada_a} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.396" endtime="20210727 09:04:34.396"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_entrada_a}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.396" level="INFO">${_entrada_a} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.396" endtime="20210727 09:04:34.397"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_entrada_b}</var>
+<arg>${index}</arg>
+<arg>3</arg>
+<arg>form</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.397" level="INFO">${_entrada_b} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.397" endtime="20210727 09:04:34.397"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_entrada_b}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.397" level="INFO">${_entrada_b} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.397" endtime="20210727 09:04:34.397"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_male}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.399" level="INFO">${_male} = Female</msg>
+<status status="PASS" starttime="20210727 09:04:34.398" endtime="20210727 09:04:34.399"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_male}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.400" level="INFO">${_male} = Female</msg>
+<status status="PASS" starttime="20210727 09:04:34.399" endtime="20210727 09:04:34.400"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_female}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.401" level="INFO">${_female} = Female</msg>
+<status status="PASS" starttime="20210727 09:04:34.400" endtime="20210727 09:04:34.401"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_female}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.401" level="INFO">${_female} = Female</msg>
+<status status="PASS" starttime="20210727 09:04:34.401" endtime="20210727 09:04:34.401"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_0a5}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.402" level="INFO">${_0a5} = 5 – 15</msg>
+<status status="PASS" starttime="20210727 09:04:34.401" endtime="20210727 09:04:34.402"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_0a5}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.402" level="INFO">${_0a5} = 5 – 15</msg>
+<status status="PASS" starttime="20210727 09:04:34.402" endtime="20210727 09:04:34.402"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_5a15}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.402" level="INFO">${_5a15} = 5 – 15</msg>
+<status status="PASS" starttime="20210727 09:04:34.402" endtime="20210727 09:04:34.402"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_5a15}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.403" level="INFO">${_5a15} = 5 – 15</msg>
+<status status="PASS" starttime="20210727 09:04:34.402" endtime="20210727 09:04:34.403"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_15a50}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>radio</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.403" level="INFO">${_15a50} = 5 – 15</msg>
+<status status="PASS" starttime="20210727 09:04:34.403" endtime="20210727 09:04:34.403"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_15a50}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.403" level="INFO">${_15a50} = 5 – 15</msg>
+<status status="PASS" starttime="20210727 09:04:34.403" endtime="20210727 09:04:34.403"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_friday}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>seleccionar</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.404" level="INFO">${_friday} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.404" endtime="20210727 09:04:34.404"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_friday}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.404" level="INFO">${_friday} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.404" endtime="20210727 09:04:34.404"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_country}</var>
+<arg>${index}</arg>
+<arg>1</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.404" level="INFO">${_country} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.404" endtime="20210727 09:04:34.404"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_country}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.405" level="INFO">${_country} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.404" endtime="20210727 09:04:34.405"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_state}</var>
+<arg>${index}</arg>
+<arg>2</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.405" level="INFO">${_state} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.405" endtime="20210727 09:04:34.405"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_state}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.405" level="INFO">${_state} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.405" endtime="20210727 09:04:34.405"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_territories}</var>
+<arg>${index}</arg>
+<arg>3</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.406" level="INFO">${_territories} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.406" endtime="20210727 09:04:34.406"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_territories}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.406" level="INFO">${_territories} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.406" endtime="20210727 09:04:34.406"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_state2}</var>
+<arg>${index}</arg>
+<arg>4</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.406" level="INFO">${_state2} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.406" endtime="20210727 09:04:34.406"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_state2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.406" level="INFO">${_state2} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.406" endtime="20210727 09:04:34.407"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${_lenguaje}</var>
+<arg>${index}</arg>
+<arg>5</arg>
+<arg>jquery1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20210727 09:04:34.407" level="INFO">${_lenguaje} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.407" endtime="20210727 09:04:34.407"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${_lenguaje}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210727 09:04:34.407" level="INFO">${_lenguaje} = None</msg>
+<status status="PASS" starttime="20210727 09:04:34.407" endtime="20210727 09:04:34.407"/>
+</kw>
+<kw name="Save Excel Document" library="ExcelLibrary">
+<arg>${DATAFILE}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" starttime="20210727 09:04:34.407" endtime="20210727 09:04:34.439"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20210727 09:04:34.439" endtime="20210727 09:04:34.439"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Input Data is:${_nombre},${_apellido},${_email},${_telefono},${_direccion},${_ciudad},${_codigo_postal},${_dominio},${_descripcion},${_mensaje},${_entrada_a},${_entrada_b},${_male},${_female},${_0a5},${_5a15},${_15a50},${_friday},${_country},${_state},${_territories},${_state2},${_lenguaje}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210727 09:04:34.439" endtime="20210727 09:04:34.441"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:34.357" endtime="20210727 09:04:34.441"/>
+</kw>
+<kw name="Ingresar munu formulario" library="menu">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo}</arg>
+<arg>300s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:34.442" endtime="20210727 09:04:34.455"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:34.456" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:34.455" endtime="20210727 09:04:34.508"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:35.512" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:34.508" endtime="20210727 09:04:35.512"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_simple_form_demo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:35.514" level="INFO">Clicking element '//*[@id="treemenu"]/li/ul/li[1]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210727 09:04:35.513" endtime="20210727 09:04:38.639"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:34.441" endtime="20210727 09:04:38.639"/>
+</kw>
+<kw name="Ejemplo formulario" library="formulario">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${_cerrar_ventana_emerjente}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210727 09:04:38.639" endtime="20210727 09:04:38.665"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_cerrar_ventana_emerjente}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:38.665" level="INFO">Clicking element '//a[@id="at-cv-lightbox-close"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:38.665" endtime="20210727 09:04:38.721"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_formulario1}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:38.721" endtime="20210727 09:04:38.748"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input_formulario1}</arg>
+<arg>${_mensaje}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:38.749" level="INFO">Typing text 'None' into text field '//input[@id="user-message"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:38.749" endtime="20210727 09:04:38.825"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_formulario1}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:38.826" level="INFO">Clicking button '//button[@type="button" and text()="Show Message"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:38.825" endtime="20210727 09:04:38.874"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${_titulo_formulario2}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210727 09:04:38.874" endtime="20210727 09:04:39.174"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input1_formulario2}</arg>
+<arg>${_entrada_a}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:39.175" level="INFO">Typing text 'None' into text field '//input[@id="sum1"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:39.174" endtime="20210727 09:04:39.241"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input2_formulario2}</arg>
+<arg>${_entrada_b}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:39.241" level="INFO">Typing text 'None' into text field '//input[@id="sum2"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:39.241" endtime="20210727 09:04:39.312"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_formulario2}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:39.313" level="INFO">Clicking button '//button[text()="Get Total"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:39.312" endtime="20210727 09:04:39.366"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,-document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210727 09:04:39.366" level="INFO">Executing JavaScript:
+window.scrollBy(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210727 09:04:39.366" endtime="20210727 09:04:39.370"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:38.639" endtime="20210727 09:04:39.370"/>
+</kw>
+<kw name="Ingresar menu 3" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:39.371" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:39.370" endtime="20210727 09:04:39.402"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:40.408" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:39.402" endtime="20210727 09:04:40.408"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_form_submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:40.409" level="INFO">Clicking element '//*[@id="treemenu"]/li/ul/li[1]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20210727 09:04:40.408" endtime="20210727 09:04:40.856"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:39.370" endtime="20210727 09:04:40.857"/>
+</kw>
+<kw name="Ejemplo formulario3" library="formulario3">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_formulario3}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:40.857" endtime="20210727 09:04:40.869"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:41.883" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:40.870" endtime="20210727 09:04:41.883"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input1_nombre_formulario3}</arg>
+<arg>${_nombre}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:41.883" level="INFO">Typing text 'Joan' into text field '//input[@name="first_name"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:41.883" endtime="20210727 09:04:41.979"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input2_apellido_formulario3}</arg>
+<arg>${_apellido}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:41.980" level="INFO">Typing text 'Arevalo' into text field '//input[@name="last_name"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:41.979" endtime="20210727 09:04:42.088"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input3_email_formulario3}</arg>
+<arg>${_email}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:42.089" level="INFO">Typing text 'joan.arevalo@neoris.com' into text field '//input[@name="email"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:42.088" endtime="20210727 09:04:42.296"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input4_telefono_formulario3}</arg>
+<arg>${_telefono}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:42.297" level="INFO">Typing text '3506855216' into text field '//input[@name="phone"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:42.296" endtime="20210727 09:04:42.423"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input5_direccion_formulario3}</arg>
+<arg>${_direccion}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:42.425" level="INFO">Typing text 'Carrea 3 # 7 33' into text field '//input[@name="address"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:42.423" endtime="20210727 09:04:42.570"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input6_ciudad_formulario3}</arg>
+<arg>${_ciudad}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:42.571" level="INFO">Typing text 'Bogota' into text field '//input[@name="city"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:42.571" endtime="20210727 09:04:42.712"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${_select_formulario3}</arg>
+<arg>Colorado</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210727 09:04:42.714" level="INFO">Selecting options from selection list '//Select[@name="state"]' by label Colorado.</msg>
+<status status="PASS" starttime="20210727 09:04:42.712" endtime="20210727 09:04:42.783"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input7_zip_formulario3}</arg>
+<arg>${_codigo_postal}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:42.784" level="INFO">Typing text '11001' into text field '//input[@name="zip"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:42.783" endtime="20210727 09:04:42.922"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_input8_website_formulario3}</arg>
+<arg>${_dominio}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:42.923" level="INFO">Typing text 'https://demoqa.com/' into text field '//input[@name="website"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:42.922" endtime="20210727 09:04:43.034"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_hosting}</arg>
+<arg>yes</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:43.034" level="INFO">Selecting 'yes' from radio button 'hosting'.</msg>
+<status status="PASS" starttime="20210727 09:04:43.034" endtime="20210727 09:04:43.096"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${_textarea_comentarios_formulario3}</arg>
+<arg>${_descripcion}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:43.097" level="INFO">Typing text 'Capacitacion johan' into text field '//textarea[@name="comment"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:43.097" endtime="20210727 09:04:43.262"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_button_send_formulario3}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:43.262" level="INFO">Clicking button '//button[text()="Send "]'.</msg>
+<status status="PASS" starttime="20210727 09:04:43.262" endtime="20210727 09:04:43.368"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:44.374" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:43.368" endtime="20210727 09:04:44.374"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,-document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210727 09:04:44.375" level="INFO">Executing JavaScript:
+window.scrollBy(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210727 09:04:44.374" endtime="20210727 09:04:44.381"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:40.857" endtime="20210727 09:04:44.381"/>
+</kw>
+<kw name="Ingresar checkbox" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:44.382" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:44.382" endtime="20210727 09:04:44.422"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:45.430" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:44.422" endtime="20210727 09:04:45.430"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_checkbox_demo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:45.430" level="INFO">Clicking element '//body/div[2]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]'.</msg>
+<status status="PASS" starttime="20210727 09:04:45.430" endtime="20210727 09:04:45.716"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:44.382" endtime="20210727 09:04:45.716"/>
+</kw>
+<kw name="Checkbox demo" library="checkbox">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_checkbox}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:45.717" endtime="20210727 09:04:45.726"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:46.733" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:45.727" endtime="20210727 09:04:46.733"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${_single_checkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:46.733" level="INFO">Selecting checkbox '//input[@id='isAgeSelected']'.</msg>
+<status status="PASS" starttime="20210727 09:04:46.733" endtime="20210727 09:04:46.790"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${_multiple_checkbox_opcion1}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:46.790" level="INFO">Selecting checkbox '//label[text()="Option 1"]/input'.</msg>
+<status status="PASS" starttime="20210727 09:04:46.790" endtime="20210727 09:04:46.852"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${_multiple_checkbox_opcion2}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:46.852" level="INFO">Selecting checkbox '//label[text()="Option 2"]/input'.</msg>
+<status status="PASS" starttime="20210727 09:04:46.852" endtime="20210727 09:04:46.908"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_checkbox}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:46.909" level="INFO">Clicking button '//input[@id='check1']'.</msg>
+<status status="PASS" starttime="20210727 09:04:46.908" endtime="20210727 09:04:46.967"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:47.979" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:46.968" endtime="20210727 09:04:47.979"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_checkbox}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:47.980" level="INFO">Clicking button '//input[@id='check1']'.</msg>
+<status status="PASS" starttime="20210727 09:04:47.980" endtime="20210727 09:04:48.005"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:49.022" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:48.006" endtime="20210727 09:04:49.022"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:45.717" endtime="20210727 09:04:49.022"/>
+</kw>
+<kw name="Ingresar radio buttons" library="menu">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_input_forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:49.023" level="INFO">Clicking element '//a[text()="Input Forms"]'.</msg>
+<status status="PASS" starttime="20210727 09:04:49.022" endtime="20210727 09:04:49.056"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:50.064" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:49.056" endtime="20210727 09:04:50.064"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${_menu_radio_buttons}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:50.064" level="INFO">Clicking element '//body/div[@id='easycont']/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]'.</msg>
+<status status="PASS" starttime="20210727 09:04:50.064" endtime="20210727 09:04:50.287"/>
+</kw>
+<status status="PASS" starttime="20210727 09:04:49.022" endtime="20210727 09:04:50.287"/>
+</kw>
+<kw name="Radio button demo" library="radio_buttons">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${_titulo_radio_buttons}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210727 09:04:50.288" endtime="20210727 09:04:50.300"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:51.302" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210727 09:04:50.300" endtime="20210727 09:04:51.302"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_optradio}</arg>
+<arg>${_female}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:51.303" level="INFO">Selecting 'Female' from radio button 'optradio'.</msg>
+<status status="PASS" starttime="20210727 09:04:51.303" endtime="20210727 09:04:51.351"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_radio_optradio}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:51.351" level="INFO">Clicking button '//button[@id='buttoncheck']'.</msg>
+<status status="PASS" starttime="20210727 09:04:51.351" endtime="20210727 09:04:51.402"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:53.409" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210727 09:04:51.403" endtime="20210727 09:04:53.409"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_optradio}</arg>
+<arg>${_male}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:53.410" level="INFO">Selecting 'Female' from radio button 'optradio'.</msg>
+<status status="PASS" starttime="20210727 09:04:53.409" endtime="20210727 09:04:53.424"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_radio_optradio}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210727 09:04:53.425" level="INFO">Clicking button '//button[@id='buttoncheck']'.</msg>
+<status status="PASS" starttime="20210727 09:04:53.424" endtime="20210727 09:04:53.457"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210727 09:04:53.458" level="INFO">Executing JavaScript:
+window.scrollBy(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210727 09:04:53.457" endtime="20210727 09:04:53.463"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210727 09:04:55.469" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210727 09:04:53.463" endtime="20210727 09:04:55.469"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_gender}</arg>
+<arg>${_male}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:55.469" level="INFO">Selecting 'Female' from radio button 'gender'.</msg>
+<status status="PASS" starttime="20210727 09:04:55.469" endtime="20210727 09:04:55.518"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${_radio_ageGroup}</arg>
+<arg>${_0a5}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210727 09:04:55.519" level="INFO">Selecting '5 – 15' from radio button 'ageGroup'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210727 09:04:55.687" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210727 09:04:55.530" endtime="20210727 09:04:55.687"/>
+</kw>
+<msg timestamp="20210727 09:04:55.691" level="FAIL">No radio button with name 'ageGroup' and value '5 – 15' found.</msg>
+<status status="FAIL" starttime="20210727 09:04:55.519" endtime="20210727 09:04:55.691"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${_boton_groupr_radio}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210727 09:04:55.691" endtime="20210727 09:04:55.691"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210727 09:04:55.692" endtime="20210727 09:04:55.692"/>
+</kw>
+<status status="FAIL" starttime="20210727 09:04:50.288" endtime="20210727 09:04:55.692"/>
+</kw>
+<kw name="Ingresar select list" library="menu">
+<status status="NOT RUN" starttime="20210727 09:04:55.692" endtime="20210727 09:04:55.692"/>
+</kw>
+<kw name="Select list" library="select_list">
+<status status="NOT RUN" starttime="20210727 09:04:55.692" endtime="20210727 09:04:55.692"/>
+</kw>
+<kw name="Ingresar ajax" library="menu">
+<status status="NOT RUN" starttime="20210727 09:04:55.692" endtime="20210727 09:04:55.692"/>
+</kw>
+<kw name="Ajax" library="ajax">
+<status status="NOT RUN" starttime="20210727 09:04:55.693" endtime="20210727 09:04:55.693"/>
+</kw>
+<kw name="Ingresar jquery" library="menu">
+<status status="NOT RUN" starttime="20210727 09:04:55.693" endtime="20210727 09:04:55.693"/>
+</kw>
+<kw name="JQuery" library="jquery">
+<status status="NOT RUN" starttime="20210727 09:04:55.693" endtime="20210727 09:04:55.693"/>
+</kw>
+<status status="FAIL" starttime="20210727 09:04:29.727" endtime="20210727 09:04:55.693"/>
+</iter>
+<status status="FAIL" starttime="20210727 09:03:41.549" endtime="20210727 09:04:55.693"/>
+</for>
+<status status="FAIL" starttime="20210727 09:03:41.503" endtime="20210727 09:04:55.694">No radio button with name 'ageGroup' and value '5 – 15' found.</status>
+</test>
+<status status="FAIL" starttime="20210727 09:03:41.057" endtime="20210727 09:04:55.695"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Main">Main</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210727 09:03:41.500" level="ERROR">Error in file 'C:\Users\joan.arevalo\Documents\Testing\TRAINING\Pruebas\proyectos\keywords\common\excel.module.resource' on line 2: Resource file '..\loadcomponents.resource' does not exist.</msg>
+</errors>
+</robot>
